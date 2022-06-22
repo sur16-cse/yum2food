@@ -1,0 +1,47 @@
+ .cardlist{
+    width:20vw;
+    box-shadow: 0px 0px 15px -5px;
+    overflow: hidden;
+    transition: all 0.5s;
+    animation: ease-in;
+    border-radius: 10px;
+}
+
+.cardlist:hover{
+    box-shadow: 0px 0px 12px 0px;
+    transform: translateZ(0);
+}
+
+.receipe-image img{
+    height:30vh;
+    width: 100%;
+    overflow: hidden;
+    transition: 2s;
+    animation: ease-in;
+    cursor: pointer;
+}
+
+.receipe-image img:hover{
+    transform: scale(1.1);
+}
+
+.receipe-title{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+}
+
+.receipe-title p:first-child{
+    font-size: 16px;
+    color:#2c2c54;
+    font-weight: 800;
+}
+
+.receipe-title p:last-child{
+    color:#ff5252;
+    font-size:20px;
+    font-weight: 600;
+}

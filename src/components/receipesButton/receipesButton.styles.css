@@ -1,0 +1,25 @@
+.receipe-data-button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.receipe-data-button button{
+    background-color:#9980FA;
+    padding:0.4rem;
+    margin:10px;
+    margin-top: 7px;
+    border-radius: 2px;
+    color:#f7f1e3;
+    font-family: 'Roboto Condensed', sans-serif;;
+}
+
+.receipe-data-button button:hover{
+    background-color:#0652DD
+}
+
+
+.receipe-data-button button a{
+    color:#f7f1e3;
+}
+

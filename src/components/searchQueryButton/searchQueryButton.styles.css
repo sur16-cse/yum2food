@@ -1,0 +1,17 @@
+.searchbox button{
+    position: absolute;
+    right:30%;
+    background-color: #341f97;
+    border: none;
+    color:white;
+    padding: 0.65rem;
+    margin:2px;
+    border-radius: 20%;
+    z-index:4;
+}
+
+.searchbox button:hover{
+    background-color: #5f27cd;
+    cursor: pointer;
+}
+
