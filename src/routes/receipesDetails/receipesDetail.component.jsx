@@ -3,6 +3,7 @@ import {useState,useEffect} from 'react'
 import { useLocation } from 'react-router-dom';
 import {Fragment} from 'react'
 import { Link } from 'react-router-dom';
+import { Hearts } from  'react-loader-spinner'
 const ReceipeDetail=()=>{
     const [recipeDetail,setRecipeDetail]=useState({});
     const location = useLocation()
@@ -22,6 +23,12 @@ const ReceipeDetail=()=>{
       } 
     return(
         <Fragment>
+            <Hearts
+                height="100"
+                width="100"
+                color='red'
+                ariaLabel='loading'
+            />  
             <div className='details'>
                 <div className="receipedetail-image">
                     <img src={recipeDetail.image_url} alt="details"/>

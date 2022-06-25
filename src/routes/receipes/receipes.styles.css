@@ -55,3 +55,9 @@ h2 span{
    font-size:1.8rem;
    font-weight:50;
 }
+
+.loader{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

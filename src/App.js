@@ -5,6 +5,7 @@ import Navigation from './routes/navbar/navbar.component'
 import Receipes from './routes/receipes/receipes.component'
 import Categories from './routes/categories/categories.component'
 import ReceipeDetail from './routes/receipesDetails/receipesDetail.component'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 const App = () => {
   return (
     <Routes>
