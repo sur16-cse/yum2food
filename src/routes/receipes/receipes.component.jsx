@@ -20,8 +20,7 @@ const Receipes=()=>{
             const res=await fetch(`https://forkify-api.herokuapp.com/api/search?q=${query}`)
             const get=await res.json();
             setReceipesList(get.recipes)
-            console.log(get.recipes)
-            //setReceipesList(get.recipes);
+            console.log(get)
         if(get.recipes===undefined){
             setError('The search you are trying is not exist. Please try again' )
             console.log("error is there")

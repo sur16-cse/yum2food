@@ -1,6 +1,8 @@
+import './receipesDetail.styles.css'
 import {useState,useEffect} from 'react'
 import { useLocation } from 'react-router-dom';
 import {Fragment} from 'react'
+import { Link } from 'react-router-dom';
 const ReceipeDetail=()=>{
     const [recipeDetail,setRecipeDetail]=useState({});
     const location = useLocation()
@@ -20,10 +22,34 @@ const ReceipeDetail=()=>{
       } 
     return(
         <Fragment>
-            <div className="card-details">
-                 <div>
-                     <img src={recipeDetail.image_url} alt="details"/>
+            <div className='details'>
+                <div className="receipedetail-image">
+                    <img src={recipeDetail.image_url} alt="details"/>
                 </div>
+                <div className='recipe-title'>
+                    <p>{recipeDetail.title}</p>
+                </div>
+                <div className='receipe-ingredient'>
+                <div className='recipe-ingredient-title'>Recipe Ingredients</div>
+                {
+                    recipeDetail.ingredients && recipeDetail.ingredients.map((ingredient,i)=>(
+                        <div key={i} className="ing">
+                            <p>{ingredient}</p>
+                            
+                        </div>
+                    ))
+                }
+                </div>
+                <div className="directions">
+                    <div className='recipe-ingredient-title'>How to Cook it</div>
+                    <p>This recipe was carefully designed and tested by <span>{recipeDetail.publisher}</span>. Please check out directions at their website.</p>
+                    <button><a href={recipeDetail.publisher_url} target="_blank"  rel="noreferrer">Directions</a></button>
+                </div>
+            </div>
+            <div class="parent-page">
+                <Link to='/receipes'>
+                    <button><a>Select other Recipe</a></button>
+                </Link>
             </div>
         </Fragment>
     )

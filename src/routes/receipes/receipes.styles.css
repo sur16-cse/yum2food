@@ -9,12 +9,12 @@
 }
 
 .receipes h1{
-    font-weight: 500;
+    font-weight: 100;
     color:#16a085
 }
 
-.receipes h1 span{
-    font-weight: 700;
+.receipes span{
+    font-weight: 600;
     color:#f39c12
 }
 
@@ -31,7 +31,7 @@
   .searchbox{
     width:100%;
     margin: auto;
-    font-family: sans-serif;
+    font-family: sans-serif 'Roboto';
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -42,8 +42,8 @@ h2{
     text-align:center;
     font-family:  'Kaushan Script', cursive;
    color:darkblue;
-   font-size:2rem;
-   font-weight:100;
+   font-size:1.8rem;
+   font-weight:50;
    text-decoration: underline;
 }
 
@@ -52,6 +52,6 @@ h2 span{
     text-align:center;
     font-family: 'Kaushan Script', cursive;
    color:darkblue;
-   font-size:2rem;
-   font-weight:600;
+   font-size:1.8rem;
+   font-weight:50;
 }
