@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { Hearts } from  'react-loader-spinner'
 const ReceipeDetail=()=>{
     const [recipeDetail,setRecipeDetail]=useState({});
+    const [recipeLoader,setRecipeLoader]=useState(false)
     const location = useLocation()
     const  from  = location.state
     
@@ -21,43 +22,55 @@ const ReceipeDetail=()=>{
         console.log(get.recipe)
         setRecipeDetail(get.recipe);
       } 
+      useEffect(()=>{
+          setRecipeLoader(true);
+          setTimeout(()=>{
+              setRecipeLoader(false)
+          },5000)
+      },[])
     return(
         <Fragment>
-            <Hearts
-                height="100"
-                width="100"
-                color='red'
-                ariaLabel='loading'
-            />  
-            <div className='details'>
-                <div className="receipedetail-image">
-                    <img src={recipeDetail.image_url} alt="details"/>
-                </div>
-                <div className='recipe-title'>
-                    <p>{recipeDetail.title}</p>
-                </div>
-                <div className='receipe-ingredient'>
-                <div className='recipe-ingredient-title'>Recipe Ingredients</div>
-                {
-                    recipeDetail.ingredients && recipeDetail.ingredients.map((ingredient,i)=>(
-                        <div key={i} className="ing">
-                            <p>{ingredient}</p>
-                            
-                        </div>
-                    ))
-                }
-                </div>
-                <div className="directions">
-                    <div className='recipe-ingredient-title'>How to Cook it</div>
-                    <p>This recipe was carefully designed and tested by <span>{recipeDetail.publisher}</span>. Please check out directions at their website.</p>
-                    <button><a href={recipeDetail.publisher_url} target="_blank"  rel="noreferrer">Directions</a></button>
-                </div>
+           { recipeLoader ? 
+            <div className='loader'>
+                    <Hearts
+                    height="200"
+                    width="200"
+                    color='red'
+                    ariaLabel='loading'
+                /> 
             </div>
-            <div class="parent-page">
-                <Link to='/receipes'>
-                    <button><a>Select other Recipe</a></button>
-                </Link>
-            </div>
+            :
+            <div>
+                <div className='details'>
+                    <div className="receipedetail-image">
+                        <img src={recipeDetail.image_url} alt="details"/>
+                    </div>
+                    <div className='recipe-title'>
+                        <p>{recipeDetail.title}</p>
+                    </div>
+                    <div className='receipe-ingredient'>
+                    <div className='recipe-ingredient-title'>Recipe Ingredients</div>
+                    {
+                        recipeDetail.ingredients && recipeDetail.ingredients.map((ingredient,i)=>(
+                            <div key={i} className="ing">
+                                <p>{ingredient}</p>
+                                
+                            </div>
+                        ))
+                    }
+                    </div>
+                    <div className="directions">
+                        <div className='recipe-ingredient-title'>How to Cook it</div>
+                        <p>This recipe was carefully designed and tested by <span>{recipeDetail.publisher}</span>. Please check out directions at their website.</p>
+                        <button><a href={recipeDetail.publisher_url} target="_blank"  rel="noreferrer">Directions</a></button>
+                    </div>
+                </div>
+                <div class="parent-page">
+                    <Link to='/receipes'>
+                        <button><a>Select other Recipe</a></button>
+                    </Link>
+                </div>
+            </div>}
         </Fragment>
     )
 }

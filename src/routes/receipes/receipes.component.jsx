@@ -15,6 +15,7 @@ const Receipes=()=>{
     const [show,setShow]=useState(true)
     const [title,setTitle]=useState(false)
     const [loading,setLoading]=useState(false);
+    const [showLoad,setLoad]=useState(false);
     //  useEffect(()=>{
     //      setLoading(true);
     //      setTimeout(()=>{
@@ -48,7 +49,7 @@ const Receipes=()=>{
     }
     const updateQuery=()=>{
         setQuery(searchField)
-        setTitle(!title)
+         setTitle(!title)
         setLoading(!loading)
     }
     return(
