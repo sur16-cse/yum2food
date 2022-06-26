@@ -163,7 +163,7 @@ console.log(categoriesApi)
         <li>ribs</li> 
       </ul> 
     </div>
-    <CategoryCardlist category={categories}/>
+    {/*<CategoryCardlist category={categories}/>*/} 
     </Fragment>
   ); 
 }; 
