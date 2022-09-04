@@ -23,10 +23,10 @@ const Card = ({category}) => {
          setImg("https://image.shutterstock.com/image-photo/notepad-your-recipe-herbs-spices-260nw-370298699.jpg")
       })
   };
-  console.log(img)
+  //console.log(img)
   useEffect(() => {
    return ()=>fetchRequest();
-  }, [category,pageNo]);
+  }, [pageNo]);
 
   window.onscroll=()=>{
     if(window.innerHeight+document.documentElement.scrollTop===document.documentElement.offsetHeight){
