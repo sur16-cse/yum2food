@@ -10,11 +10,11 @@ const Categories = () => {
   const [images,setImages]=useState("")
   const [imageList,setImageList]=useState([])
   //get list mention below in jsx using this fetch
-  useEffect(()=>{
-    fetch(`forkify-api.herokuapp.com/phrases.html`)
-  .then((response)=>response.text())
-  .then((receipeCategory)=>setCategoriesApi(receipeCategory))
-},[])
+//   useEffect(()=>{
+//     fetch(`forkify-api.herokuapp.com/phrases.html`)
+//   .then((response)=>response.text())
+//   .then((receipeCategory)=>setCategoriesApi(receipeCategory))
+// },[])
 //console.log(categoriesApi)
 
 
