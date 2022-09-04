@@ -1,0 +1,35 @@
+.receipe-data-button{
+    height:7vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+hr{
+    background-color:rgb(243, 243, 243);
+    border:none;
+    height:1px;
+    font-weight: 700;
+}
+
+.receipe-data-button button{
+    background-color:#9980FA;
+    padding:0.4rem;
+    margin:10px;
+    margin-top: 5px;
+    border-radius: 2px;
+    color:#f7f1e3;
+    margin-bottom: 3px;
+    font-family: 'Roboto Condensed', sans-serif;;
+    cursor: pointer;
+}
+
+.receipe-data-button button:hover{
+    background-color:#0652DD
+}
+
+
+.receipe-data-button button a{
+    color:#f7f1e3;
+}
+

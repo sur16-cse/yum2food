@@ -1,0 +1,28 @@
+.receipes-search-box{
+    width: 40%;
+    height:2.5rem;
+    border: 0.2px solid #b2bec3;
+    background-color: transparent;
+    border-radius: 2px;
+    position: relative;
+    padding:0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbox input:hover{
+    box-shadow: 0px 0px 15px -5px #a9a9a9;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+input::-webkit-input-placeholder{
+    color:#b2bec3;
+}
+
+input:focus::-webkit-input-placeholder{
+    color:black;
+}

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Bigelow+Rules&family=Kaushan+Script&family=Roboto+Slab&display=swap');
+
+.receipes{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    font-family: 'Kaushan Script', cursive;
+}
+
+.receipes h1{
+    font-weight: 100;
+    color:#16a085
+}
+
+.receipes span{
+    font-weight: 600;
+    color:#f39c12
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    width:100%;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .searchbox{
+    width:100%;
+    margin: auto;
+    font-family: sans-serif 'Roboto';
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+h2{
+    margin-top: 10px;
+    text-align:center;
+    font-family:  'Kaushan Script', cursive;
+   color:darkblue;
+   font-size:1.8rem;
+   font-weight:50;
+   text-decoration: underline;
+}
+
+h2 span{
+    margin-top: 10px;
+    text-align:center;
+    font-family: 'Kaushan Script', cursive;
+   color:darkblue;
+   font-size:1.8rem;
+   font-weight:50;
+}
+
+.loader{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

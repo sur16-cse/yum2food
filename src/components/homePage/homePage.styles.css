@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Bigelow+Rules&family=Kaushan+Script&family=Roboto+Condensed&family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Bigelow+Rules&family=Fresca&family=Kaushan+Script&family=PT+Sans+Narrow&family=Roboto+Condensed&family=Roboto+Slab&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+.home{
+    display:flex;
+    align-items: center;
+    min-height: 88vh;
+    width: 100%;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(rgba(8, 8, 8, 0.3), rgba(8, 8, 8, 0.3)), url(https://wc.wallpaperuse.com/wallp/4-45794_s.jpg);
+    background-size: cover !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 88vh;
+}
+
+.homecard{
+    display: flex;
+    flex-direction: column;
+    width: 58vw;
+    max-height: 70vh;
+    justify-content: center;
+    align-items: center;
+    background-color:#ff00001a;
+    box-shadow: 0px 0px 2px 2px rgba(251, 224, 224,0.5);
+    border-radius: 20px;
+    margin: 0 20px 0px 20px;
+    margin-top: 70px;
+    padding: 35px 0px 30px 0px;
+}
+ .title{
+    color: rgb(249, 166, 166);
+   
+}
+
+.title h3{
+    font-size: 4.5rem;
+    font-weight:400;
+    font-family: 'Fresca', sans-serif;
+    margin-bottom: 0%;
+}
+
+.title span{
+    color:lightgoldenrodyellow;
+}
+
+.content{
+    color:rgb(235, 137, 9);
+    font-size: 1.9rem;
+    font-family: 'Kaushan Script', cursive;
+    margin-bottom: 30px;
+    font-weight: 100;
+}
