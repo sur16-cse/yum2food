@@ -7,8 +7,7 @@ import {CardActionArea,ImageList} from '@mui/material';
 import './card.styles.css'
 
 const Card = ({category}) => { 
-  const [img, setImg] = useState("");
-  const [pageNo, setPageNo] = useState(1);
+  const [img, setImg] = useState("https://image.shutterstock.com/image-photo/notepad-your-recipe-herbs-spices-260nw-370298699.jpg");
   
   const fetchRequest = async () => {
   let data=category.concat(" ","food recipe")
@@ -23,16 +22,11 @@ const Card = ({category}) => {
          setImg("https://image.shutterstock.com/image-photo/notepad-your-recipe-herbs-spices-260nw-370298699.jpg")
       })
   };
-  //console.log(img)
+
   useEffect(() => {
    return ()=>fetchRequest();
-  }, [pageNo]);
+  }, [category]);
 
-  window.onscroll=()=>{
-    if(window.innerHeight+document.documentElement.scrollTop===document.documentElement.offsetHeight){
-      setPageNo(pageNo+1)
-    }
-  }
   return (
     <div className='categorycard'>
       <CardActionArea>

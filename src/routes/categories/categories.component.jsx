@@ -7,8 +7,7 @@ const Categories = () => {
   const[categoriesApi,setCategoriesApi]=useState([])
   const [searchCatField,setSearchCatField]=useState(''); //[value,setValue]
   const [filteredCategories,setfilteredCategories]=useState(categories)
-  const [images,setImages]=useState("")
-  const [imageList,setImageList]=useState([])
+  
   //get list mention below in jsx using this fetch
 //   useEffect(()=>{
 //     fetch(`forkify-api.herokuapp.com/phrases.html`)
