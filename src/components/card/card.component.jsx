@@ -5,10 +5,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {CardActionArea,ImageList} from '@mui/material';
 import './card.styles.css'
+import Link, { useNavigate } from 'react-router-dom'
 
-const Card = ({category}) => { 
-  const [img, setImg] = useState("https://image.shutterstock.com/image-photo/notepad-your-recipe-herbs-spices-260nw-370298699.jpg");
-  
+const Card = ({category,pageNo}) => { 
+  const [img, setImg] = useState("");
+  const Navigate=useNavigate()
   const fetchRequest = async () => {
   let data=category.concat(" ","food recipe")
     return fetch('https://api.unsplash.com/search/photos?query='+
@@ -24,11 +25,23 @@ const Card = ({category}) => {
   };
 
   useEffect(() => {
-   return ()=>fetchRequest();
-  }, [category]);
+   return ()=>{
+    setTimeout(()=>{
+      fetchRequest();
+    },5000)
+   }
+  }, [pageNo]);
+
+  const onNavigateHandler=()=>{
+    Navigate('/receipes',{
+      state:{
+        category
+      }
+    })
+  }
 
   return (
-    <div className='categorycard'>
+    <div className='categorycard' onClick={onNavigateHandler}>
       <CardActionArea>
         <CardMedia
           component="img"

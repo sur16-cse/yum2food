@@ -2,6 +2,7 @@ import { Fragment } from "react"
 import './cardlist.styles.css'
 import ReceipesButton from "../receipesButton/receipesButton.component"
 import {Outlet} from 'react-router-dom'
+
 const CardList=({recipe})=>{
     return(
         <Fragment>

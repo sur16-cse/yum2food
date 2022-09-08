@@ -4,9 +4,11 @@ import CardList from "../../components/cardlist/cardlist.component";
 import { Fragment } from "react";
 import "./receipes.styles.css";
 import { Audio, Puff } from "react-loader-spinner";
+import { useLocation } from "react-router-dom";
 
 import SearchQueryButton from "../../components/searchQueryButton/searchQueryButton.component";
 const Receipes = () => {
+  
   const [query, setQuery] = useState("");
   const [searchField, setSearchField] = useState("");
   const [receipesList, setReceipesList] = useState([]);
@@ -20,9 +22,14 @@ const Receipes = () => {
   //          setLoading(false)
   //      },5000)
   //  },[])
+
+  const params = useLocation();
+  const { from } = params.state.category;
+  console.log(params.state.category)
   useEffect(() => {
     if (query !== "") getdata(query);
   }, [query]);
+  
   async function getdata(query) {
     const res = await fetch(
       `https://forkify-api.herokuapp.com/api/search?q=${query}`
