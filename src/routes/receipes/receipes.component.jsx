@@ -26,8 +26,13 @@ const Receipes = () => {
   //  },[])
 
   useEffect(() => {
-    if(location.state.category!=="")
-    setQuery(location.state.category)
+    console.log(location.state)
+    if(location.state && location.state.category!==''){
+      setQuery(location.state.category)
+      setLoading(true);
+      setTitle(true);
+    }
+
     if (query !== "") getdata(query);
   }, [query]);
   
@@ -56,9 +61,14 @@ const Receipes = () => {
     setLoading(false);
   };
 
+  // if(location.state.category!=='')
+  // setQuery(location.state.category)
+  // console.log(query)
+
   const updateQuery = () => {
+    if(searchField!=='')
     setQuery(searchField);
-    console.log(query)
+   
     if(searchField!=='')
     {
       setLoading(true);
@@ -91,12 +101,9 @@ const Receipes = () => {
         </div>
       ) : (
         <div>
-          { title  ? 
+          { title && 
             <h2>
               The Receipe List: <span>{query}</span>
-            </h2>:
-            <h2>
-              The Receipe List: <span>{location.state.category}</span>
             </h2>
           }
           <div className="cards">
