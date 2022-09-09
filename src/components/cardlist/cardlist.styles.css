@@ -1,11 +1,12 @@
  .cardlist{
-    height:44h;
+    min-height:47vh;
     width:20vw;
     box-shadow: 0px 0px 15px -5px;
     overflow: hidden;
     transition: all 0.2s;
     animation: ease-in;
     border-radius: 5px;
+    max-height: 51vh;
 }
 
 .cardlist:hover{
@@ -14,7 +15,7 @@
 }
 
 .receipe-image{
-    height: 30vh;
+    max-height: 30vh;
 }
 
 .receipe-image img{
@@ -32,8 +33,7 @@
 }
 
 .receipe-title{
-   
-    height:9vh;
+    min-height:9vh;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +44,7 @@
 }
 
 .receipe-title p:first-child{
-    font-size: 16.5px;
+    font-size: 14.5px;
     color:#2c2c54;
     font-weight: bolder;
 }

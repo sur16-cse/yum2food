@@ -5,8 +5,8 @@ import { Fragment } from "react";
 import "./receipes.styles.css";
 import { Audio, Puff } from "react-loader-spinner";
 import { useLocation } from "react-router-dom";
-
 import SearchQueryButton from "../../components/searchQueryButton/searchQueryButton.component";
+
 const Receipes = () => {
   
   const [query, setQuery] = useState("");
@@ -16,6 +16,8 @@ const Receipes = () => {
   const [show, setShow] = useState(true);
   const [title, setTitle] = useState(false);
   const [loading, setLoading] = useState(false);
+  const location=useLocation()
+  
   //  useEffect(()=>{
   //      setLoading(true);
   //      setTimeout(()=>{
@@ -23,10 +25,9 @@ const Receipes = () => {
   //      },5000)
   //  },[])
 
-  // const params = useLocation();
-  // const { from } = params.state.category;
-  // console.log(params.state.category)
   useEffect(() => {
+    if(location.state.category!=="")
+    setQuery(location.state.category)
     if (query !== "") getdata(query);
   }, [query]);
   
@@ -46,6 +47,7 @@ const Receipes = () => {
     }
     setSearchField("");
   }
+
   const onSearchChange = (event) => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
     console.log(searchFieldString);
@@ -53,6 +55,7 @@ const Receipes = () => {
     event.target.value = "";
     setLoading(false);
   };
+
   const updateQuery = () => {
     setQuery(searchField);
     console.log(query)
@@ -65,6 +68,7 @@ const Receipes = () => {
       setLoading(false)
     }
   };
+
   return (
     <Fragment>
       <div className="receipes">
@@ -87,11 +91,14 @@ const Receipes = () => {
         </div>
       ) : (
         <div>
-          {title && (
+          { title  ? 
             <h2>
               The Receipe List: <span>{query}</span>
+            </h2>:
+            <h2>
+              The Receipe List: <span>{location.state.category}</span>
             </h2>
-          )}
+          }
           <div className="cards">
             {(receipesList || "").length > 0 ? (
               receipesList &&
