@@ -23,9 +23,9 @@ const Receipes = () => {
   //      },5000)
   //  },[])
 
-  const params = useLocation();
-  const { from } = params.state.category;
-  console.log(params.state.category)
+  // const params = useLocation();
+  // const { from } = params.state.category;
+  // console.log(params.state.category)
   useEffect(() => {
     if (query !== "") getdata(query);
   }, [query]);
