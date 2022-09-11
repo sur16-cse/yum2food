@@ -34,7 +34,7 @@ const Card = ({category,pageNo}) => {
    return ()=>{
     setTimeout(()=>{
       fetchRequest();
-    },4000)
+    },2000)
    }
   }, [pageNo]);
 
