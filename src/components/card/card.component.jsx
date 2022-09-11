@@ -3,13 +3,17 @@ import { useState, useEffect } from "react";
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import {CardActionArea,ImageList} from '@mui/material';
+import {CardActionArea} from '@mui/material';
 import './card.styles.css'
-import Link, { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
 
 const Card = ({category,pageNo}) => { 
   const [img, setImg] = useState("");
   const Navigate=useNavigate()
+  const [isloading,setIsLoading]=useState(true)
+
   const fetchRequest = async () => {
   let data=category.concat(" ","food recipe")
     return fetch('https://api.unsplash.com/search/photos?query='+
@@ -18,17 +22,19 @@ const Card = ({category,pageNo}) => {
       .then((databack) => {
         let allImages = databack.results[Math.floor(Math.random()*10)];
         setImg(allImages.urls.regular);
+        setIsLoading(false)
       })
       .catch( e => {
          setImg("https://image.shutterstock.com/image-photo/notepad-your-recipe-herbs-spices-260nw-370298699.jpg")
+         setIsLoading(false)
       })
   };
-
+  
   useEffect(() => {
    return ()=>{
     setTimeout(()=>{
       fetchRequest();
-    },1000)
+    },4000)
    }
   }, [pageNo]);
 
@@ -41,6 +47,13 @@ const Card = ({category,pageNo}) => {
   }
 
   return (
+    <>
+   { isloading?
+    <Stack className='categorycard' spacing={3}>
+      <Skeleton variant="rectangular" width={210} height={140} />
+      <Skeleton variant="rounded" width={210} height={50} />
+    </Stack>
+    :
     <div className='categorycard' onClick={onNavigateHandler}>
       <CardActionArea>
         <CardMedia
@@ -56,6 +69,8 @@ const Card = ({category,pageNo}) => {
         </CardContent>
       </CardActionArea>
     </div>
+   }
+</>
   )
 }
 
