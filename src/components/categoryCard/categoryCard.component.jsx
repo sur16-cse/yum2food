@@ -5,11 +5,8 @@ import { useState } from 'react'
 const CategoryCardlist = ({categories})=>{
   const [pageNo, setPageNo] = useState(1);
     const [pageATaTime,setPageAtaTime]=useState(10)
-  window.onscroll=()=>{
-    if(window.onload){
-      setPageNo(pageNo+1)
-      setPageAtaTime(pageATaTime+5);
-    }
+  window.onload = () => {
+    setPageNo(0);
   }
 
   return(
