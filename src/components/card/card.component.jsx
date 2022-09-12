@@ -36,7 +36,7 @@ const Card = ({category,pageNo}) => {
       fetchRequest();
     },2000)
    }
-  }, [category]);
+  }, [pageNo]);
 
   const onNavigateHandler=()=>{
     Navigate('/receipes',{
