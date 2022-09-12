@@ -1,13 +1,17 @@
 import React from 'react'
 import Card from '../card/card.component'
 import './categoryCard.styles.css'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 const CategoryCardlist = ({categories})=>{
   const [pageNo, setPageNo] = useState(1);
     const [pageATaTime,setPageAtaTime]=useState(10)
-  window.onload = () => {
-    setPageNo(0);
-  }
+  
+    useEffect(() => {
+      setTimeout(() => {
+        setPageNo(0);
+      }, 1000);
+    }, [])
+    
 
   return(
     <div className="card-list">
